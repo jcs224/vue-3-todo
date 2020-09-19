@@ -1,15 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div>
+    <h1>Todos</h1>
+    <ul>
+      <li v-for="todo in todos" :key="todo">{{ todo }}</li>
+    </ul>
+    <input type="text" v-model="newTodo">
+    <button @click="addTodo">submit</button>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { reactive, ref } from 'vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    let todos = reactive([
+      'cool beans',
+    ])
+
+    let newTodo = ref('')
+
+    function addTodo() {
+      todos.push(newTodo.value)
+      newTodo.value = ''
+    }
+
+    return {
+      todos,
+      newTodo,
+      addTodo
+    }
   }
 }
 </script>
