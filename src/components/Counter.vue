@@ -1,21 +1,21 @@
 <template>
-    <h2>Number of todos: {{ numTodos }}</h2>
+  <h2 class="mb-2 text-gray-800 text-md">Number of todos: {{ numTodos }}</h2>
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed } from "vue";
 
 export default {
-    props: {
-        todos: Array,
-    },
+  props: {
+    todos: Array,
+  },
 
-    setup(props) {
-        let numTodos = computed(() => props.todos.length)
+  setup(props) {
+    let numTodos = computed(() => props.todos.length);
 
-        return {
-            numTodos
-        }
-    }
-}
+    return {
+      numTodos,
+    };
+  },
+};
 </script>
