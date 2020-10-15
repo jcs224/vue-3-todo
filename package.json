@@ -6,6 +6,9 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-1",
     "tailwindcss": "^1.8.12",
     "vue": "^3.0.0-rc.1"
   },
