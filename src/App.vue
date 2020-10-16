@@ -1,5 +1,7 @@
 <template>
-  <div class="container mx-auto py-2 px-4 lg:container lg:mx-auto">
+<div class="flex flex-col h-screen">
+<Navbar/>
+  <div class="container flex-grow mx-auto py-2 px-4 lg:container lg:mx-auto">
     <h1 class="text-4xl font-serif text-blue-700">Todos</h1>
     <Counter :todos="todos" />
     <ul class="space-y-1">
@@ -22,16 +24,22 @@
       <button @click="addTodo" class="btn btn-blue">submit</button>
     </div>
   </div>
+<Footer/>
+</div>
 </template>
 
 <script>
 import Counter from "./components/Counter.vue";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 import { reactive, ref } from "vue";
 import { todos } from "./state";
 
 export default {
   components: {
     Counter,
+    Navbar,
+    Footer
   },
 
   setup() {
